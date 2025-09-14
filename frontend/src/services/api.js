@@ -1,0 +1,34 @@
+import axios from "axios";  
+
+const API_BASE_URL = "http://localhost:8000/api"; // Replace with your backend URL
+
+const api = axios.create({
+    baseURL: API_BASE_URL,
+   headers:{
+    'Content-Type':'application/json'
+   }
+});
+
+// WHY interceptor? Automatically add token to all requests
+
+api.interceptors.request.use((config)=>{
+const token = localStorage.getItem('token')
+ if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+})
+
+export const authApi = {
+    register : (userData)=> api.post('/auth/register', userData),
+    login : (userData)=> api.post('/auth/login', userData),
+}
+
+export const urlAPI = {
+  createShortUrl: (originalUrl) => api.post('/urls/shorten', { originalUrl }),
+  getUserUrls:    ()            => api.get('/urls/my-urls'),
+  getUrlStats:    (urlCode)     => api.get(`/urls/stats/${urlCode}`),
+};
+
+
+export default api;
