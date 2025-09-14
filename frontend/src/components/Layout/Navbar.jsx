@@ -2,9 +2,7 @@ import React from 'react'
 
 const Navbar = () => {
   return (
-    <nav className='shadow lg'>
-
-    </nav>
+    <div>Navbar</div>
   )
 }
 
