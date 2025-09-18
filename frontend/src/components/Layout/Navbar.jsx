@@ -22,11 +22,14 @@ const Navbar = () => {
           <div className='flex  item-center space-x-4 '>
             {isAuthenticated ? (
               <>
+              <div className='space-x-4 flex  items-center  font-semibold'>
                 <Link to="/" className='hover:text-blue-200'>Dashboard</Link>
-                <span className='text-white mx-4'>
-                  Hello, {user?.name}!
+                
+                <span className='text-white mx-4 '>
+                  Hello, {user?.username}!
                 </span>
                 <button onClick={handleLogout} className='bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded'>Logout</button>
+                  </div>
               </>
             ) : (
               <>

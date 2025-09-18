@@ -38,7 +38,7 @@ const Dashboard = () => {
   // WHY redirect? Protect dashboard from non-authenticated users
   useEffect(() => {
     if (!isAuthenticated) {
-      Navigate('/login');
+      navigate('/login');
     }
   }, [isAuthenticated, navigate]);
 
