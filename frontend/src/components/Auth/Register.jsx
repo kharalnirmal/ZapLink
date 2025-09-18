@@ -5,7 +5,7 @@ import { authApi } from '../../services/api';
 
 const Register = () => {
   const [formData, setFormData] = useState({
-    name: '',
+    username: '',
     email: '',
     password: '',
     confirmPassword: ''
@@ -73,7 +73,7 @@ const Register = () => {
           </label>
           <input
             type="text"
-            name="name"
+            name="username"
             value={formData.name}
             onChange={handleChange}
             required

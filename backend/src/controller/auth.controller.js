@@ -17,6 +17,7 @@ const register = async (req,res)=>{
         const { email, password,username} = req.body;
      
         //  check the  given Credential are true or not 
+        console.log(req.body)
 
          if(!username || !email || !password){
             return res.status(400).json({error:"All fields are required"})
