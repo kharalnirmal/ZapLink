@@ -19,16 +19,16 @@ const token = localStorage.getItem('token')
   return config;
 })
 
-export const authApi = {
+ const authApi = {
     register : (userData)=> api.post('/auth/register', userData),
     login : (userData)=> api.post('/auth/login', userData),
 }
 
-export const urlAPI = {
+ const urlAPI = {
   createShortUrl: (originalUrl) => api.post('/urls/shorten', { originalUrl }),
   getUserUrls:    ()            => api.get('/urls/my-urls'),
   getUrlStats:    (urlCode)     => api.get(`/urls/stats/${urlCode}`),
 };
 
 
-export default api;
+export {api , authApi , urlAPI};
