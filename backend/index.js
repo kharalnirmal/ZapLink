@@ -14,7 +14,7 @@ import jwt from 'jsonwebtoken';
 // !  middlewares
 
   app.use(cors({
-    origin:"http://localhost:5173", // frontend url
+    origin:"https://zaplink-frontend.onrender.com", // frontend url
     credentials:true
 
   }));
